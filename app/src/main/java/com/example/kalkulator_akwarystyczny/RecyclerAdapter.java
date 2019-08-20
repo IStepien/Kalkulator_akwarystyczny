@@ -10,11 +10,12 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.RecyclerViewHolder> {
-    String[] mCalculators;
+    private String[] mCalculators;
+    private OnCalculatorListener mOnCalculatorListener;
 
-
-    RecyclerAdapter (String [] calculators){
-        mCalculators=calculators;
+    RecyclerAdapter(String[] calculators, OnCalculatorListener onCalculatorListener) {
+        mCalculators = calculators;
+        mOnCalculatorListener = onCalculatorListener;
     }
 
     @NonNull
@@ -24,7 +25,8 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.Recycl
                 .inflate(R.layout.calculator_item, viewGroup, false);
 
 
-        return new RecyclerViewHolder(v); }
+        return new RecyclerViewHolder(v, mOnCalculatorListener);
+    }
 
     @Override
     public void onBindViewHolder(@NonNull RecyclerViewHolder recyclerViewHolder, int i) {
@@ -37,12 +39,24 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.Recycl
         return mCalculators.length;
     }
 
-    public class RecyclerViewHolder extends RecyclerView.ViewHolder {
+    public class RecyclerViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
         TextView textView;
+        OnCalculatorListener onCalculatorListener;
 
-        RecyclerViewHolder(@NonNull View itemView) {
+        RecyclerViewHolder(@NonNull View itemView, OnCalculatorListener onCalculatorListener) {
             super(itemView);
             textView = itemView.findViewById(R.id.textView_calculatorItemTitle);
+            this.onCalculatorListener = onCalculatorListener;
+            itemView.setOnClickListener(this);
         }
+
+        @Override
+        public void onClick(View v) {
+            onCalculatorListener.onCalculatorClick(getAdapterPosition());
+        }
+    }
+
+    public interface OnCalculatorListener {
+        void onCalculatorClick(int position);
     }
 }
