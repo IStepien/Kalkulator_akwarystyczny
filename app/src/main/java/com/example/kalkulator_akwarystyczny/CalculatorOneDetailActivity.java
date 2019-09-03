@@ -43,12 +43,12 @@ public class CalculatorOneDetailActivity extends AppCompatActivity {
                 TextView MgSO4x7H2O = findViewById(R.id.textView_MgSO4x7H2O);
                 TextView calcDescription = findViewById(R.id.textView_calcOne_description);
                 calcDescription.setText(R.string.calcOne_description);
-
-                K2SO4.setText(calculatorOne.calculateK2SO4().toString());
-                KCl.setText(calculatorOne.calculateKCl().toString());
-                KH2PO4.setText(calculatorOne.calculateKH2PO4().toString());
-                KNO3.setText(calculatorOne.calculateKNO3().toString());
-                MgSO4x7H2O.setText(calculatorOne.calculateMgSO4x7H2O().toString());
+//
+//                K2SO4.setText(calculatorOne.calculateK2SO4().toString());
+//                KCl.setText(calculatorOne.calculateKCl().toString());
+//                KH2PO4.setText(calculatorOne.calculateKH2PO4().toString());
+//                KNO3.setText(calculatorOne.calculateKNO3().toString());
+//                MgSO4x7H2O.setText(calculatorOne.calculateMgSO4x7H2O().toString());
             }
         });
 

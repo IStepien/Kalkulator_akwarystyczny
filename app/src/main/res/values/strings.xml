@@ -1,4 +1,17 @@
 <resources>
     <string name="app_name">Kalkulator_akwarystyczny</string>
     <string name="capacity_hint">Pojemność akwarium</string>
+    <string name="calcOne_description">Kalkulator do obliczania spadku kH po dodatku kwasu</string>
+    <string name="calcTwo_description">Kalkulator do obliczania rozcieńczania kwasów</string>
+    <string name="textView_calcOne_tableContentDescription_column1">Zmniejszenie twardości węglanowej bez zmiany ogólnej</string>
+    <string name="textView_calcOne_tableContentDescription_column2">stężenie</string>
+    <string name="textView_calcOne_tableContentDescription_row1">kwas solny, HCl</string>
+    <string name="textView_calcOne_tableContentDescription_unit">ml</string>
+    <string name="textView_calcOne_tableContentDescription_row2">kwas solny, HCl</string>
+    <string name="textView_calcOne_tableContentDescription_row3">kwas siarkowy, H2SO4</string>
+    <string name="textView_calcOne_tableContentDescription_row4">kwas azotowy, HNO3</string>
+    <string name="textView_calcOne_tableContentDescription_row5">kwas ortofosforowy, H3PO4</string>
+    <string name="textView_calcOne_tableContentDescription_row6">kwas octowy (ocet)</string>
+    <string name="textView_calcOne_tableContentDescription_row7">kwas cytrynowy (krystaliczny)</string>
+    <string name="textView_calcOne_tableContentDescription_resultUnit">stopień niemiecki, on</string>
 </resources>

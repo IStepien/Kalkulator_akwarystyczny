@@ -1,32 +1,38 @@
 package com.example.kalkulator_akwarystyczny;
 
+
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
+
+import butterknife.BindView;
+import butterknife.ButterKnife;
 
 
 public class MainActivity extends AppCompatActivity {
-    RecyclerAdapter adapter;
-
+    @BindView(R.id.button_calcOne)
+    Button button_calcOne;
+    @BindView(R.id.button_calcTwo)
+    Button button_calcTwo;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        ButterKnife.bind(this);
 
-        String [] calculators = {"Kalk1", "Kalk2"};
-
-        RecyclerView recyclerView = findViewById(R.id.recyclerView);
-        recyclerView.setLayoutManager(new LinearLayoutManager(this));
-        recyclerView.setHasFixedSize(true);
-
-        adapter = new RecyclerAdapter(calculators);
-        recyclerView.setAdapter(adapter);
-
-
-
+        button_calcOne.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(), CalculatorOneDetailActivity.class);
+                startActivity(intent);
+            }
+        });
 
     }
+
+
 }
