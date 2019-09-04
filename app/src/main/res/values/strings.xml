@@ -4,7 +4,7 @@
     <string name="calcOne_description">Kalkulator do obliczania spadku kH po dodatku kwasu</string>
     <string name="calcTwo_description">Kalkulator do obliczania rozcieńczania kwasów</string>
     <string name="textView_calcOne_tableContentDescription_column1">Zmniejszenie twardości węglanowej bez zmiany ogólnej</string>
-    <string name="textView_calcOne_tableContentDescription_column2">stężenie</string>
+    <string name="textView_calcOne_tableContentDescription_column2">stężenie \n  %</string>
     <string name="textView_calcOne_tableContentDescription_row1">kwas solny, HCl</string>
     <string name="textView_calcOne_tableContentDescription_unit">ml</string>
     <string name="textView_calcOne_tableContentDescription_row2">kwas solny, HCl</string>
@@ -14,4 +14,15 @@
     <string name="textView_calcOne_tableContentDescription_row6">kwas octowy (ocet)</string>
     <string name="textView_calcOne_tableContentDescription_row7">kwas cytrynowy (krystaliczny)</string>
     <string name="textView_calcOne_tableContentDescription_resultUnit">stopień niemiecki, on</string>
+    <string name="button_additionalInfo">Informacje dodatkowe</string>
+    <string name="textView_calcOne_additionalInfo">1. Wszystkie podane kwasy mineralne są wyjątkowo niebezpieczne. Wywołują poważne oparzenia skóry, nie mówiąc o oczach. Wypalają dziury w ubraniach, w meblach, papierze. Podczas rozcieńczania kwasów zalecane są: okulary ochronne, rękawiczki gumowe i stary fartuch. Wszystkie "rozlane" krople należy szybko zetrzeć (wielokrotnie) szmatką na mokro lub zmyć. Zalecane jest rozlewanie np. w wannie. Nie wolno przechowywać kwasów w popularnych opakowaniach, aby nie dopuścić do tragicznych pomyłek. Plastikowe butelki po napojach zupełnie się nie nadają - kwas potrafi je zniszczyć. Najlepszy jest polietylen – najczęściej mamy takie opakowania po „chemii domowej”. Nie stosować korków korkowych. Wszystkie naczynia po operacji na kwasach (menzurki, pipety i strzykawki) wymyć.\n
+   2. Stosunkowo bezpieczne w przechowywaniu są roztwory kwasów o stężeniu poniżej 10%. Ja proponuję wam 5% i niżej.\n
+    3. Przed rozcieńczaniem sprawdź, ile potrzebujesz roztworu. Być może będzie to tak mała ilość, że nie będziesz w stanie jej odmierzyć. Wtedy zrób roztwór bardziej rozcieńczony (np. 1-2%)\n
+   4. Kwas solny stężony dymi bardzo szkodliwym, duszącym chlorowodorem. Jest też wyjątkowo korozyjny. Dlatego najlepiej całą posiadaną ilość rozcieńczyć od razu do stężenia 5-10% i taki użytkować.\n
+   5. Kwas siarkowy stężony jest wyjątkowo niebezpieczny. Podczas rozcieńczania wydziela się tak duża ilość ciepła, że ciecz potrafi się zagotować i gotując opryskać nas kwasem. Dlatego kwas wlewamy zawsze do wody (nie odwrotnie) intensywnie mieszając. Gdy ciecz nagrzeje się zbytnio należy ją schłodzić przed kontynuowaniem rozcieńczania. Stężony potrafi zapalić papier – bezwzględnie ścierać wilgotną ściereczką.\n
+   6. Dodawanie kwasu do akwarium: nigdy nie dodawać kwasów bez ich znacznego rozcieńczenia. Zalecane jest dodać odmierzoną ilość kwasu do wody do podmiany (kilka-kilkanaście litrów). Należy pamiętać, aby nie powodować jednorazowo dużych zmian pH. Przy potrzebie znacznego zakwaszenia wody (zbicia KH) dodawanie kwasu należy rozbić na kilka dni. Przyjmuje się, że spadek pH powinien być nie większy niż 0,3 dziennie. Na drugi dzień po dodaniu, przed podaniem kolejnej porcji ZAWSZE sprawdź pH i kH wody. W akwarium biegnie wiele reakcji biochemicznych i obliczenia czysto chemiczne mogą być nieprecyzyjne.\n
+    7. Dodając kwas dla zmniejszenia kH nigdy nie próbujmy zejść poniżej 3-4 stopni niemieckich. Może się to tragicznie skończyć dla ryb (gwałtowny spadek pH) po wyczerpaniu zdolności buforowej wody.\n
+    9. Nawet kwas o najmniejszym stężeniu może się zatężyć poprzez odparowanie wody. Stąd pochlapanie ubrania nawet 1-2% kwasem nie zabezpieczy przed  zniszczeniami gdy kwas nie zostanie usunięty. Czasem dziury w dywanach wypadają po kilku miesiącach od pochlapania.\n
+        8. Po dodaniu kwasu wydziela się CO2, który rozpuszczając się w wodzie zmniejsza dodatkowo pH. Zanim ta ilość CO2 nie zostanie usunięta testy pH i KH i CO2 będą przekłamywać.\n
+    10. Kwasy neutralizujemy zwykłą sodą oczyszczoną stosowaną do pieczenia oraz dużą ilością twardej wody – stąd nie ma ryzyka, że pochlapane ciuchy zniszczą nam pralkę podczas prania. </string>
 </resources>
