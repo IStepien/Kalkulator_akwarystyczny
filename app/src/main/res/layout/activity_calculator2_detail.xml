@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:layout_margin="8dp"
@@ -8,9 +9,166 @@
 
     <TextView
         android:id="@+id/textView_calc2_description"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/calcTwo_description"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <TableLayout
+        android:id="@+id/tableLayout_calcTwo1"
+        android:layout_width="422dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView_calc2_description">
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:text="@string/textView_calcTwo_acidConcentration" />
+
+            <EditText android:id="@+id/editText_calcTwo_acidConcentration" />
+        </TableRow>
+
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView android:text="@string/textView_calcTwo_acidQuantity" />
+
+            <EditText android:id="@+id/editText_calcTwo_acidQuantity" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView android:text="@string/textView_calcTwo_acidTargetConcentration" />
+
+            <EditText android:id="@+id/editText_calcTwo_acidTargetConcentration" />
+
+        </TableRow>
+    </TableLayout>
+
+    <TableLayout
+        android:layout_width="422dp"
+        android:layout_height="338dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tableLayout_calcTwo1">
+
+        <TableRow>
+
+            <TextView
+                android:layout_width="195dp"
+                android:layout_height="wrap_content"
+                android:text="@string/textView_calcTwo_tableDescriptionColumn1" />
+
+            <TextView
+                android:layout_width="62dp"
+                android:layout_span="2"
+                android:text="@string/textView_calcTwo_tableDescriptionColumn2" />
+
+            <TextView
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:text="@string/textView_calcTwo_tableDescriptionColumn3" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/textView_calcOne_tableContentDescription_row2" />
+
+            <TextView
+                android:id="@+id/textView_calcTwo_acidQuantityToBeAdded_HCL"
+                android:layout_width="70dp"
+                android:layout_height="match_parent" />
+
+            <TextView
+                android:layout_width="30dp"
+                android:layout_height="wrap_content"
+                android:text="@string/textView_calcOne_tableContentDescription_unit" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/textView_calcOne_tableContentDescription_row3" />
+
+            <TextView android:id="@+id/textView_calcTwo_acidQuantityToBeAdded_H2SO4" />
+
+            <TextView
+                android:layout_width="30dp"
+                android:layout_height="wrap_content"
+                android:text="@string/textView_calcOne_tableContentDescription_unit" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/textView_calcOne_tableContentDescription_row4" />
+
+            <TextView android:id="@+id/textView_calcTwo_acidQuantityToBeAdded_HNO3" />
+
+            <TextView
+                android:layout_width="30dp"
+                android:layout_height="wrap_content"
+                android:text="@string/textView_calcOne_tableContentDescription_unit" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/textView_calcOne_tableContentDescription_row5" />
+
+            <TextView android:id="@+id/textView_calcTwo_acidQuantityToBeAdded_H3PO4" />
+
+            <TextView
+                android:layout_width="30dp"
+                android:layout_height="wrap_content"
+                android:text="@string/textView_calcOne_tableContentDescription_unit" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/textView_calcOne_tableContentDescription_row6" />
+
+            <TextView android:id="@+id/textView_calcTwo_acidQuantityToBeAdded_vinegar" />
+
+            <TextView
+                android:layout_width="30dp"
+                android:layout_height="wrap_content"
+                android:text="@string/textView_calcOne_tableContentDescription_unit" />
+        </TableRow>
+
+    </TableLayout>
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>

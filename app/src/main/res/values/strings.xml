@@ -26,4 +26,11 @@
         8. Po dodaniu kwasu wydziela się CO2, który rozpuszczając się w wodzie zmniejsza dodatkowo pH. Zanim ta ilość CO2 nie zostanie usunięta testy pH i KH i CO2 będą przekłamywać.\n
     10. Kwasy neutralizujemy zwykłą sodą oczyszczoną stosowaną do pieczenia oraz dużą ilością twardej wody – stąd nie ma ryzyka, że pochlapane ciuchy zniszczą nam pralkę podczas prania. </string>
     <string name="textView_waterQuantity">Ilość wody której twardość kH jest zmniejszana (w litrach)</string>
+    <string name="textView_calcTwo_acidConcentration">Stężenie kwasu przed rozcieńczeniem (%)</string>
+    <string name="textView_calcTwo_acidQuantity">Ilość kwasu, którą należy odmierzyć (ml)</string>
+    <string name="textView_calcTwo_acidTargetConcentration">Dolecowe stęzenie kwasu po rozcieńczeniu</string>
+    <string name="textView_calcOne_tableContentDescription_unitG">g</string>
+    <string name="textView_calcTwo_tableDescriptionColumn1">Kwas</string>
+    <string name="textView_calcTwo_tableDescriptionColumn2">dolać do wody w ilości:</string>
+    <string name="textView_calcTwo_tableDescriptionColumn3">razem\n ml</string>
 </resources>
