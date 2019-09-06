@@ -1,90 +1,55 @@
 package com.example.kalkulator_akwarystyczny;
 
+import android.util.Log;
+
+import java.util.List;
+
 import lombok.Data;
 
 @Data
 public class CalculatorOne {
 
-//    private Double aquariumCapacity;
-//    private Double dailyDose;
-//    private Double fertilizerQuantity;
-//    private Double Kquantity;
-//    private Double NOquantity;
-//    private Double POquantity;
-//    private Double MGquantity;
-//
-//    public CalculatorOne(Double aquariumCapacity, Double dailyDose, Double fertilizerQuantity, Double Kquantity, Double NOquantity, Double POquantity, Double MGquantity) {
-//        this.aquariumCapacity = aquariumCapacity;
-//        this.dailyDose = dailyDose;
-//        this.fertilizerQuantity = fertilizerQuantity;
-//        this.Kquantity = Kquantity;
-//        this.NOquantity = NOquantity;
-//        this.POquantity = POquantity;
-//        this.MGquantity = MGquantity;
+    private Double gradeSum;
+
+    private Double calculateConcentration(ElementsForCalcOne element) {
+        return 1 + element.ratioForConcentration * (element.concentration/100) / element.percentageForConcentration;
+    }
+
+    private Double calculateMass(ElementsForCalcOne element) {
+        Double result;
+        if(element.equals(ElementsForCalcOne.ACIDUM_CITRICUM)){
+            result = ElementsForCalcOne.ACIDUM_CITRICUM.quantity;
+        }else{
+        result = calculateConcentration(element) * element.quantity;}
+        return result;
 
 
-//    public Double calculateK2SO4() {
-//        return calculateKgForK() / calculateKation(ElementsForCalcOne.K);
-//    }
-//
-//    public Double calculateKCl() {
-//        return calculateKgForK() / calculateKation(ElementsForCalcOne.KCl);
-//
-//    }
-//
-//    public Double calculateKNO3() {
-//        return counted(NOquantity, ElementsForCalcOne.NO3);
-//    }
-//
-//    public Double calculateKH2PO4() {
-//        return counted(POquantity, ElementsForCalcOne.PO4);
-//    }
+    }
 
-//    public Double calculateMgSO4x7H2O() {
-//        return calculateCapacity(MGquantity) / calculateKation(ElementsForCalcOne.MG) * fertilizerQuantity / 1000;
-//    }
+    public Double calculateAcidQuantity(List<ElementsForCalcOne> elementsList) {
+        Double result = 0.0;
+        gradeSum=0.0;
+        for (ElementsForCalcOne element : elementsList
+        ) {
+            if (element.equals(ElementsForCalcOne.ACIDUM_CITRICUM)) {
 
-//    private Double calculateKgForK() {
-//        return (calculateCapacity(Kquantity) * fertilizerQuantity / 1000) - calculateKg(NOquantity, ElementsForCalcOne.NO3)
-//                - calculateKg(POquantity, ElementsForCalcOne.PO4);
-//    }
+             result=  ElementsForCalcOne.ACIDUM_CITRICUM.quantity/ElementsForCalcOne.ACIDUM_CITRICUM.molarMass*2;
+            }
+            else if (element.equals(ElementsForCalcOne.HCl)|| element.equals(ElementsForCalcOne.HNO3)||element.equals(ElementsForCalcOne.VINEGAR)){
+                result = (element.concentration/100)* calculateMass(element) / element.molarMass;
+            }
+            else {
+                result = calculateMass(element)*(element.concentration/100)/element.molarMass*2;
+            }
+            gradeSum += result;
+        }
 
-//    private Double calculateKg(Double elementQuantity, ElementsForCalcOne elementsForCalcOne) {
-//        return counted(elementQuantity, elementsForCalcOne) * calculateKation(elementsForCalcOne);
-//    }
+        return result;
+    }
 
-//    private Double calculateCapacity(Double elementQuantity) {
-//        return elementQuantity * aquariumCapacity / (7 * dailyDose);
-//    }
+    public Double calculateReductionOfCarbonateHardness(Double waterQuantity) {
+        return Math.round(gradeSum * 28.0 / 10 * 1000) / waterQuantity;
 
-//    private Double calculateAnion(ElementsForCalcOne elementsForCalcOne) {
-//        return elementsForCalcOne.anion / elementsForCalcOne.molarMass;
-//
-//    }
+    }
 
-//    private Double calculateKation(ElementsForCalcOne elementsForCalcOne) {
-//        Double molarMass = elementsForCalcOne.molarMass;
-//        Double kation=0.0;
-//        switch (elementsForCalcOne){
-//            case K:
-//                molarMass = elementsForCalcOne.molarMass * 4.46;
-//                kation=78.2;
-//                break;
-//            case KCl:
-//                molarMass=74.55;
-//                kation=39.1;
-//                break;
-//            case NO3:
-//                molarMass=101.1;
-//                kation=39.1;
-//                break;
-//        }
-//
-//
-//        return kation / molarMass;
-//    }
-
-//    private Double counted(Double elementQuantity, ElementsForCalcOne elementsForCalcOne) {
-//        return calculateCapacity(elementQuantity) / calculateAnion(elementsForCalcOne) * fertilizerQuantity / 1000;
-//    }
 }

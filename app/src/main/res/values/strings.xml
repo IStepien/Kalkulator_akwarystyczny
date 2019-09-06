@@ -25,4 +25,5 @@
     9. Nawet kwas o najmniejszym stężeniu może się zatężyć poprzez odparowanie wody. Stąd pochlapanie ubrania nawet 1-2% kwasem nie zabezpieczy przed  zniszczeniami gdy kwas nie zostanie usunięty. Czasem dziury w dywanach wypadają po kilku miesiącach od pochlapania.\n
         8. Po dodaniu kwasu wydziela się CO2, który rozpuszczając się w wodzie zmniejsza dodatkowo pH. Zanim ta ilość CO2 nie zostanie usunięta testy pH i KH i CO2 będą przekłamywać.\n
     10. Kwasy neutralizujemy zwykłą sodą oczyszczoną stosowaną do pieczenia oraz dużą ilością twardej wody – stąd nie ma ryzyka, że pochlapane ciuchy zniszczą nam pralkę podczas prania. </string>
+    <string name="textView_waterQuantity">Ilość wody której twardość kH jest zmniejszana (w litrach)</string>
 </resources>
