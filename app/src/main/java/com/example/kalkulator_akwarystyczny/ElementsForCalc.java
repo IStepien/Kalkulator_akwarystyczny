@@ -4,7 +4,7 @@ import lombok.AllArgsConstructor;
 
 
 @AllArgsConstructor
-public enum ElementsForCalcOne {
+public enum ElementsForCalc {
 
     HCl(36.5, 35.5, 0.2, 0.39, 0.0, 0.0),
     H2SO4(98.0, 96.0, 0.84, 0.985, 0.0, 0.0),

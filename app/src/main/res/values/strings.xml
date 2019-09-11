@@ -28,9 +28,10 @@
     <string name="textView_waterQuantity">Ilość wody której twardość kH jest zmniejszana (w litrach)</string>
     <string name="textView_calcTwo_acidConcentration">Stężenie kwasu przed rozcieńczeniem (%)</string>
     <string name="textView_calcTwo_acidQuantity">Ilość kwasu, którą należy odmierzyć (ml)</string>
-    <string name="textView_calcTwo_acidTargetConcentration">Dolecowe stęzenie kwasu po rozcieńczeniu</string>
+    <string name="textView_calcTwo_acidTargetConcentration">Docelowe stęzenie kwasu po rozcieńczeniu</string>
     <string name="textView_calcOne_tableContentDescription_unitG">g</string>
     <string name="textView_calcTwo_tableDescriptionColumn1">Kwas</string>
-    <string name="textView_calcTwo_tableDescriptionColumn2">dolać do wody w ilości:</string>
+    <string name="textView_calcTwo_tableDescriptionColumn2">ilość wody\n ml</string>
     <string name="textView_calcTwo_tableDescriptionColumn3">razem\n ml</string>
+    <string name="textView_calcTwo_warning">Pamiętaj, że kwas wlewamy do wody (w okularach i rękawiczkach) !!!</string>
 </resources>

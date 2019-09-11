@@ -20,8 +20,8 @@ import butterknife.ButterKnife;
 import butterknife.OnTextChanged;
 
 public class CalculatorOneDetailActivity extends AppCompatActivity {
-    @BindView(R.id.button_additionalInfo)
-    Button button_additonalInfo;
+    @BindView(R.id.button_calcOne_additionalInfo)
+    Button button_additionalInfo;
     @BindView(R.id.editText_HCl)
     EditText HCl_quantity;
     @BindView(R.id.editText_H2SO4)
@@ -57,7 +57,7 @@ public class CalculatorOneDetailActivity extends AppCompatActivity {
         ButterKnife.bind(this);
 
 
-        button_additonalInfo.setOnClickListener(new View.OnClickListener() {
+        button_additionalInfo.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getApplicationContext(), AdditionalInfoActivity.class);
@@ -82,25 +82,25 @@ public class CalculatorOneDetailActivity extends AppCompatActivity {
 
         setToZeroIfEmpty(editTexts);
 
-        ElementsForCalcOne.HCl.setQuantity(Double.valueOf(editTexts[0]));
-        ElementsForCalcOne.HCl.setConcentration(Double.valueOf(editTexts[1]));
+        ElementsForCalc.HCl.setQuantity(Double.valueOf(editTexts[0]));
+        ElementsForCalc.HCl.setConcentration(Double.valueOf(editTexts[1]));
 
-        ElementsForCalcOne.H2SO4.setQuantity(Double.valueOf(editTexts[2]));
-        ElementsForCalcOne.H2SO4.setConcentration(Double.valueOf(editTexts[3]));
+        ElementsForCalc.H2SO4.setQuantity(Double.valueOf(editTexts[2]));
+        ElementsForCalc.H2SO4.setConcentration(Double.valueOf(editTexts[3]));
 
-        ElementsForCalcOne.HNO3.setQuantity(Double.valueOf(editTexts[4]));
-        ElementsForCalcOne.HNO3.setConcentration(Double.valueOf(editTexts[5]));
+        ElementsForCalc.HNO3.setQuantity(Double.valueOf(editTexts[4]));
+        ElementsForCalc.HNO3.setConcentration(Double.valueOf(editTexts[5]));
 
-        ElementsForCalcOne.H3PO4.setQuantity(Double.valueOf(editTexts[6]));
-        ElementsForCalcOne.H3PO4.setConcentration(Double.valueOf(editTexts[7]));
+        ElementsForCalc.H3PO4.setQuantity(Double.valueOf(editTexts[6]));
+        ElementsForCalc.H3PO4.setConcentration(Double.valueOf(editTexts[7]));
 
-        ElementsForCalcOne.ACIDUM_CITRICUM.setQuantity(Double.valueOf(editTexts[8]));
+        ElementsForCalc.ACIDUM_CITRICUM.setQuantity(Double.valueOf(editTexts[8]));
 
-        ElementsForCalcOne.VINEGAR.setQuantity(Double.valueOf(editTexts[9]));
-        ElementsForCalcOne.VINEGAR.setConcentration(Double.valueOf(editTexts[10]));
+        ElementsForCalc.VINEGAR.setQuantity(Double.valueOf(editTexts[9]));
+        ElementsForCalc.VINEGAR.setConcentration(Double.valueOf(editTexts[10]));
 
-        List<ElementsForCalcOne> elements = new ArrayList<>(Arrays.asList(ElementsForCalcOne.HCl, ElementsForCalcOne.H2SO4,
-                ElementsForCalcOne.HNO3, ElementsForCalcOne.H3PO4, ElementsForCalcOne.ACIDUM_CITRICUM, ElementsForCalcOne.VINEGAR));
+        List<ElementsForCalc> elements = new ArrayList<>(Arrays.asList(ElementsForCalc.HCl, ElementsForCalc.H2SO4,
+                ElementsForCalc.HNO3, ElementsForCalc.H3PO4, ElementsForCalc.ACIDUM_CITRICUM, ElementsForCalc.VINEGAR));
 
 
         CalculatorOne calculatorOne = new CalculatorOne();

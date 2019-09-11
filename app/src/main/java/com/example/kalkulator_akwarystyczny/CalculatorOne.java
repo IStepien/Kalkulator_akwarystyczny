@@ -1,6 +1,6 @@
 package com.example.kalkulator_akwarystyczny;
 
-import android.util.Log;
+
 
 import java.util.List;
 
@@ -11,14 +11,14 @@ public class CalculatorOne {
 
     private Double gradeSum;
 
-    private Double calculateConcentration(ElementsForCalcOne element) {
+    Double calculateConcentration(ElementsForCalc element) {
         return 1 + element.ratioForConcentration * (element.concentration/100) / element.percentageForConcentration;
     }
 
-    private Double calculateMass(ElementsForCalcOne element) {
+    private Double calculateMass(ElementsForCalc element) {
         Double result;
-        if(element.equals(ElementsForCalcOne.ACIDUM_CITRICUM)){
-            result = ElementsForCalcOne.ACIDUM_CITRICUM.quantity;
+        if(element.equals(ElementsForCalc.ACIDUM_CITRICUM)){
+            result = ElementsForCalc.ACIDUM_CITRICUM.quantity;
         }else{
         result = calculateConcentration(element) * element.quantity;}
         return result;
@@ -26,16 +26,16 @@ public class CalculatorOne {
 
     }
 
-    public Double calculateAcidQuantity(List<ElementsForCalcOne> elementsList) {
+    public Double calculateAcidQuantity(List<ElementsForCalc> elementsList) {
         Double result = 0.0;
         gradeSum=0.0;
-        for (ElementsForCalcOne element : elementsList
+        for (ElementsForCalc element : elementsList
         ) {
-            if (element.equals(ElementsForCalcOne.ACIDUM_CITRICUM)) {
+            if (element.equals(ElementsForCalc.ACIDUM_CITRICUM)) {
 
-             result=  ElementsForCalcOne.ACIDUM_CITRICUM.quantity/ElementsForCalcOne.ACIDUM_CITRICUM.molarMass*2;
+             result=  ElementsForCalc.ACIDUM_CITRICUM.quantity/ ElementsForCalc.ACIDUM_CITRICUM.molarMass*2;
             }
-            else if (element.equals(ElementsForCalcOne.HCl)|| element.equals(ElementsForCalcOne.HNO3)||element.equals(ElementsForCalcOne.VINEGAR)){
+            else if (element.equals(ElementsForCalc.HCl)|| element.equals(ElementsForCalc.HNO3)||element.equals(ElementsForCalc.VINEGAR)){
                 result = (element.concentration/100)* calculateMass(element) / element.molarMass;
             }
             else {

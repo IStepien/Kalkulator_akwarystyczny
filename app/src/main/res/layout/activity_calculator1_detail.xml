@@ -267,7 +267,7 @@
     </TableLayout>
 
     <Button
-        android:id="@+id/button_additionalInfo"
+        android:id="@+id/button_calcOne_additionalInfo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/button_additionalInfo"
