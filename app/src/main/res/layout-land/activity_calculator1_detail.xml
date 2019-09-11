@@ -1,0 +1,302 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center"
+    android:layout_margin="8dp">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+    <TextView
+        android:id="@+id/textView_calcOne_description"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/calcOne_description"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+
+    <TableLayout
+        android:id="@+id/tableLayout_calcOne"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView_calcOne_description">
+
+        <TableRow
+            android:id="@+id/row0"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/textView_waterQuantity"
+                android:layout_height="55dp"
+                android:layout_span="3"
+                android:baselineAligned="false"
+                android:text="@string/textView_waterQuantity" />
+
+            <EditText
+                android:id="@+id/editText_waterQuantity"
+                android:inputType="numberDecimal"
+                android:layout_height="wrap_content"
+                android:gravity="center|center_horizontal|center_vertical"
+                android:imeOptions="flagNoFullscreen"/>
+        </TableRow>
+
+
+
+        <TableRow
+            android:id="@+id/row1"
+            android:layout_marginTop="8dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_width="254dp"
+                android:layout_height="wrap_content"
+                android:layout_span="3"
+                android:text="@string/textView_calcOne_tableContentDescription_column1" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/textView_calcOne_tableContentDescription_column2" />
+
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/row2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_width="185dp"
+                android:layout_height="wrap_content"
+                android:text="@string/textView_calcOne_tableContentDescription_row2" />
+
+            <EditText
+                android:id="@+id/editText_HCl"
+                android:layout_width="54dp"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:inputType="numberDecimal"
+                android:imeOptions="flagNoFullscreen"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/textView_calcOne_tableContentDescription_unit" />
+
+            <EditText
+                android:id="@+id/editText_HClconcentration"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:inputType="numberDecimal"
+                android:imeOptions="flagNoFullscreen"/>
+
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/row3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/textView_calcOne_tableContentDescription_row3" />
+
+            <EditText
+                android:id="@+id/editText_H2SO4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:inputType="numberDecimal"
+                android:imeOptions="flagNoFullscreen"/>
+
+            <TextView
+                android:layout_width="30dp"
+                android:layout_height="wrap_content"
+                android:text="@string/textView_calcOne_tableContentDescription_unit" />
+
+            <EditText
+                android:id="@+id/editText_H2SO4concentration"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:inputType="numberDecimal"
+                android:imeOptions="flagNoFullscreen"/>
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/row4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/textView_calcOne_tableContentDescription_row4" />
+
+            <EditText
+                android:id="@+id/editText_HNO3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:inputType="numberDecimal"
+                android:imeOptions="flagNoFullscreen"/>
+
+            <TextView
+                android:layout_width="30dp"
+                android:layout_height="wrap_content"
+                android:text="@string/textView_calcOne_tableContentDescription_unit" />
+
+            <EditText
+                android:id="@+id/editText_HNO3concentration"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:inputType="numberDecimal"
+                android:imeOptions="flagNoFullscreen"/>
+
+
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/row5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/textView_calcOne_tableContentDescription_row5" />
+
+            <EditText
+                android:id="@+id/editText_H3PO4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:inputType="numberDecimal"
+                android:imeOptions="flagNoFullscreen"/>
+
+            <TextView
+                android:layout_width="30dp"
+                android:text="@string/textView_calcOne_tableContentDescription_unit" />
+
+            <EditText
+                android:id="@+id/editText_H3PO4concentration"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:inputType="numberDecimal"
+                android:imeOptions="flagNoFullscreen"/>
+
+
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/row6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_width="190dp"
+                android:layout_height="wrap_content"
+                android:text="@string/textView_calcOne_tableContentDescription_row6" />
+
+            <EditText
+                android:id="@+id/editText_vinegar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:inputType="numberDecimal"
+                android:imeOptions="flagNoFullscreen"/>
+
+            <TextView
+                android:layout_width="30dp"
+                android:text="@string/textView_calcOne_tableContentDescription_unit" />
+
+            <EditText
+                android:id="@+id/editText_vinegarConcentration"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:inputType="numberDecimal"
+                android:imeOptions="flagNoFullscreen"/>
+
+
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/row7"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_width="190dp"
+                android:layout_height="wrap_content"
+                android:text="@string/textView_calcOne_tableContentDescription_row7" />
+
+            <EditText
+                android:id="@+id/editText_citricAcid"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:inputType="numberDecimal"
+                android:imeOptions="flagNoFullscreen"/>
+
+            <TextView
+                android:layout_width="30dp"
+                android:text="@string/textView_calcOne_tableContentDescription_unitG" />
+
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/row8result"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_width="164dp"
+                android:text="@string/textView_calcOne_tableContentDescription_column1" />
+
+            <TextView
+                android:id="@+id/textView_calcOne_result"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:maxLength="5"
+                 />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_span="2"
+                android:text="@string/textView_calcOne_tableContentDescription_resultUnit" />
+
+        </TableRow>
+
+    </TableLayout>
+
+    <Button
+        android:id="@+id/button_calcOne_additionalInfo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/button_additionalInfo"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tableLayout_calcOne" />
+
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

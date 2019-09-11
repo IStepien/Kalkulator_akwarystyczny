@@ -106,7 +106,13 @@ public class CalculatorOneDetailActivity extends AppCompatActivity {
         CalculatorOne calculatorOne = new CalculatorOne();
         calculatorOne.calculateAcidQuantity(elements);
         Double waterQuantity = Double.valueOf(editTexts[11]);
-        calcOneResult.setText((calculatorOne.calculateReductionOfCarbonateHardness(waterQuantity)).toString());
+        Double reductionOfCarbonateHardness = calculatorOne.calculateReductionOfCarbonateHardness(waterQuantity);
+        if(reductionOfCarbonateHardness.isInfinite()|| reductionOfCarbonateHardness.isNaN()){
+            calcOneResult.setText("error");
+        }
+        else {
+            calcOneResult.setText(reductionOfCarbonateHardness.toString());
+        }
     }
 
     private void setToZeroIfEmpty(String[] editTexts) {

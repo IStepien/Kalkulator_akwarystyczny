@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Kalkulator_akwarystyczny</string>
+    <string name="app_name">Kalkulator akwarystyczny</string>
     <string name="capacity_hint">Pojemność akwarium</string>
     <string name="calcOne_description">Kalkulator do obliczania spadku kH po dodatku kwasu</string>
     <string name="calcTwo_description">Kalkulator do obliczania rozcieńczania kwasów</string>
