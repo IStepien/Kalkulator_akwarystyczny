@@ -126,18 +126,11 @@ public class CalculatorOneDetailActivity extends AppCompatActivity implements Ad
 
         editTexts = new String[]{acidConcentration.getText().toString(), acidQuantity.getText().toString(),
                 waterQuantity.getText().toString()};
+
         setToZeroIfEmpty(editTexts);
 
         Double concentration = Double.valueOf(editTexts[0]);
-        if (concentration > 10.0 && element != ElementsForCalc.ACIDUM_CITRICUM) {
-            Snackbar snackbar = Snackbar.make(currentLayout, R.string.calcOne_concentrationWarning, Snackbar.LENGTH_LONG);
-            snackbar.show();
-        }
-
-        if (element == ElementsForCalc.ACIDUM_CITRICUM) {
-            Snackbar snackbar = Snackbar.make(currentLayout, R.string.calcOne_citricAcidWarning, Snackbar.LENGTH_LONG);
-            snackbar.show();
-        }
+        checkWarnings(concentration, element);
 
         element.setConcentration(concentration);
         element.setQuantity(Double.valueOf(editTexts[1]));
@@ -162,5 +155,17 @@ public class CalculatorOneDetailActivity extends AppCompatActivity implements Ad
             }
         }
 
+    }
+
+    private void checkWarnings(Double concentration, ElementsForCalc element) {
+        if (concentration > 10.0 && element != ElementsForCalc.ACIDUM_CITRICUM) {
+            Snackbar snackbar = Snackbar.make(currentLayout, R.string.calcOne_concentrationWarning, Snackbar.LENGTH_LONG);
+            snackbar.show();
+        }
+
+        if (element == ElementsForCalc.ACIDUM_CITRICUM) {
+            Snackbar snackbar = Snackbar.make(currentLayout, R.string.calcOne_citricAcidWarning, Snackbar.LENGTH_LONG);
+            snackbar.show();
+        }
     }
 }

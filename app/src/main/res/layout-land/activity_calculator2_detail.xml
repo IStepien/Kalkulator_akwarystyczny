@@ -19,59 +19,103 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
-    <TableLayout
-        android:id="@+id/tableLayout_calcTwo1"
-        android:layout_width="422dp"
-        android:layout_height="wrap_content"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView_calc2_description">
+        <TableLayout
+            android:id="@+id/tableLayout_calcTwo1"
+            android:layout_width="422dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView_calc2_description"
+            android:layout_marginTop="8dp">
 
-        <TableRow
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:text="@string/textView_calcTwo_acidConcentration" />
+                <TextView
+                    android:layout_height="40dp"
+                    android:gravity="center|center_horizontal|left"
+                    android:text="@string/textView_calcTwo_acidConcentration" />
 
-            <EditText
-                android:id="@+id/editText_calcTwo_acidConcentration"
-                android:layout_width="wrap_content"
-                android:inputType="number"
-                android:maxLines="1"
-                android:imeOptions="flagNoFullscreen"/>
-        </TableRow>
+                <com.google.android.material.textfield.TextInputLayout
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/editText_calcTwo_acidConcentration"
+                        android:layout_width="60dp"
+                        android:layout_height="40dp"
+                        android:gravity="center|center_horizontal|center_vertical"
+                        android:inputType="numberDecimal"
+                        android:maxLines="1"
+                        android:paddingTop="-5dp"
+                        android:paddingBottom="-5dp"
+                        android:imeOptions="flagNoFullscreen"/>
+                </com.google.android.material.textfield.TextInputLayout>
+
+            </TableRow>
 
 
-        <TableRow
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                >
 
-            <TextView android:text="@string/textView_calcTwo_acidQuantity" />
+                <TextView android:layout_height="40dp"
+                    android:gravity="center|center_horizontal|left"
+                    android:text="@string/textView_calcTwo_acidQuantity" />
 
-            <EditText
-                android:id="@+id/editText_calcTwo_acidQuantity"
-                android:layout_width="wrap_content"
-                android:inputType="number"
-                android:maxLines="1"
-                android:imeOptions="flagNoFullscreen"/>
-        </TableRow>
+                <com.google.android.material.textfield.TextInputLayout
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center">
 
-        <TableRow
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/editText_calcTwo_acidQuantity"
+                        android:layout_width="60dp"
+                        android:layout_height="40dp"
+                        android:gravity="center|center_horizontal|center_vertical"
+                        android:inputType="numberDecimal"
+                        android:maxLines="1"
+                        android:paddingTop="-5dp"
+                        android:paddingBottom="-5dp"
+                        android:imeOptions="flagNoFullscreen"/>
+                </com.google.android.material.textfield.TextInputLayout>
 
-            <TextView android:text="@string/textView_calcTwo_acidTargetConcentration" />
+            </TableRow>
 
-            <EditText
-                android:id="@+id/editText_calcTwo_acidTargetConcentration"
-                android:layout_width="wrap_content"
-                android:inputType="number"
-                android:maxLines="1"
-                android:imeOptions="flagNoFullscreen"/>
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
 
-        </TableRow>
-    </TableLayout>
+                <TextView
+                    android:layout_height="40dp"
+                    android:gravity="center|center_horizontal"
+                    android:text="@string/textView_calcTwo_acidTargetConcentration" />
+
+                <com.google.android.material.textfield.TextInputLayout
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/editText_calcTwo_acidTargetConcentration"
+                        android:layout_width="60dp"
+                        android:layout_height="40dp"
+                        android:paddingBottom="-5dp"
+                        android:paddingTop="-5dp"
+                        android:gravity="center|center_horizontal|center_vertical"
+                        android:inputType="numberDecimal"
+                        android:maxLines="1"
+                        android:imeOptions="flagNoFullscreen"/>
+                </com.google.android.material.textfield.TextInputLayout>
+
+
+            </TableRow>
+        </TableLayout>
 
     <TableLayout
         android:id="@+id/tableLayout_calcTwo2"

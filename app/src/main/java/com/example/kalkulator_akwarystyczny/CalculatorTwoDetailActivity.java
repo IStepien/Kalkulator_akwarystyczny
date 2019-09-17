@@ -65,7 +65,8 @@ public class CalculatorTwoDetailActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-      if(!acidConcentration.getText().toString().isEmpty()&&!acidQuantity.getText().toString().isEmpty()&&!acidTargetConcentration.getText().toString().isEmpty()) {
+      if(!acidConcentration.getText().toString().isEmpty()
+              &&!acidQuantity.getText().toString().isEmpty()&&!acidTargetConcentration.getText().toString().isEmpty()) {
           onInputChange();
       }
     }

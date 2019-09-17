@@ -21,129 +21,165 @@
         app:layout_constraintTop_toTopOf="parent" />
 
 
-    <TableLayout
-        android:id="@+id/tableLayout_calcOne"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView_calcOne_description">
-
-        <TableRow
-            android:id="@+id/row0"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-
-            <TextView
-                android:id="@+id/textView_waterQuantity"
-                android:layout_height="55dp"
-                android:layout_span="2"
-                android:baselineAligned="false"
-                android:text="@string/textView_waterQuantity" />
-
-            <EditText
-                android:id="@+id/editText_waterQuantity"
-                android:layout_width="50dp"
-                android:layout_height="wrap_content"
-                android:gravity="center|center_horizontal|center_vertical"
-                android:inputType="numberDecimal"
-                android:imeOptions="flagNoFullscreen"/>
-        </TableRow>
-
-
-        <TableRow
-            android:id="@+id/row1"
+        <TableLayout
+            android:id="@+id/tableLayout_calcOne"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="8dp">
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView_calcOne_description"
+            android:layout_marginTop="16dp">
 
-            <TextView
-                android:layout_width="323dp"
-                android:layout_height="wrap_content"
-                android:layout_span="4"
-                android:text="@string/textView_calcOne_tableContentDescription_column1" />
-
-        </TableRow>
-
-        <TableRow
-            android:id="@+id/row2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content">
-
-            <Spinner
-                android:id="@+id/spinner_calcOne_acid"
+            <TableRow
+                android:id="@+id/row0"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_span="3" />
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/textView_waterQuantity"
+                    android:layout_height="55dp"
+                    android:layout_span="2"
+                    android:baselineAligned="false"
+                    android:text="@string/textView_waterQuantity" />
+                <com.google.android.material.textfield.TextInputLayout
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    >
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/editText_waterQuantity"
+                        android:layout_width="100dp"
+                        android:layout_height="40dp"
+                        android:paddingBottom="-5dp"
+                        android:paddingTop="-5dp"
+                        android:gravity="center|center_horizontal|center_vertical"
+                        android:inputType="numberDecimal"
+                        android:imeOptions="flagNoFullscreen"
+                        />
+                </com.google.android.material.textfield.TextInputLayout>
 
 
-        </TableRow>
-        <TableRow
-            android:id="@+id/row3"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content">
-            <TextView
-                android:text="@string/textView_calcOne_acidQuantity"/>
+            </TableRow>
 
-            <EditText
-                android:id="@+id/editText_acidQuantity"
-                android:layout_width="80dp"
+
+            <TableRow
+                android:id="@+id/row1"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:gravity="center"
-                android:inputType="numberDecimal"
-                android:imeOptions="flagNoFullscreen"/>
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="16dp">
 
-            <TextView
-                android:id="@+id/textView_calcOne_unit"
-                android:layout_width="80dp"
-                android:layout_height="wrap_content"
-                android:text="@string/textView_calcOne_tableContentDescription_unit" />
+                <TextView
+                    android:layout_width="323dp"
+                    android:layout_height="wrap_content"
+                    android:layout_span="4"
+                    android:text="@string/textView_calcOne_tableContentDescription_column1" />
 
-        </TableRow>
-        <TableRow
-            android:id="@+id/row4"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content">
-            <TextView
-                android:text="@string/textView_calcOne_acidConcentration"/>
-            <EditText
-                android:id="@+id/editText_acidConcentration"
-                android:layout_width="50dp"
-                android:layout_height="wrap_content"
-                android:gravity="center"
-                android:inputType="numberDecimal"
-                android:imeOptions="flagNoFullscreen"/>
-            <TextView
+            </TableRow>
+
+            <TableRow
+                android:id="@+id/row2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/textView_calcOne_tableContentDescription_percentage" />
-        </TableRow>
+                android:layout_marginBottom="8dp">
 
-        <TableRow
-            android:id="@+id/row8result"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content">
+                <Spinner
+                    android:id="@+id/spinner_calcOne_acid"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_span="2" />
 
-            <TextView
-                android:layout_width="164dp"
-                android:text="@string/textView_calcOne_tableContentDescription_column1" />
 
-            <TextView
-                android:id="@+id/textView_calcOne_result"
-                android:layout_width="36dp"
-                android:layout_height="match_parent"
-                android:gravity="center"
-                android:maxLength="6"/>
+            </TableRow>
+            <TableRow
+                android:id="@+id/row3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:text="@string/textView_calcOne_acidQuantity"/>
+                <com.google.android.material.textfield.TextInputLayout
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center">
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/editText_acidQuantity"
+                        android:layout_width="80dp"
+                        android:layout_height="40dp"
+                        android:paddingBottom="-5dp"
+                        android:paddingTop="-5dp"
+                        android:gravity="center|center_horizontal|center_vertical"
+                        android:inputType="numberDecimal"
+                        android:imeOptions="flagNoFullscreen"
+                        />
+                </com.google.android.material.textfield.TextInputLayout>
 
-            <TextView
+                <TextView
+                    android:id="@+id/textView_calcOne_unit"
+                    android:layout_width="80dp"
+                    android:layout_height="40dp"
+                    android:gravity="center|left"
+                    android:text="@string/textView_calcOne_tableContentDescription_unit" />
+
+            </TableRow>
+            <TableRow
+                android:id="@+id/row4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:text="@string/textView_calcOne_acidConcentration"/>
+                <com.google.android.material.textfield.TextInputLayout
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center">
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/editText_acidConcentration"
+                        android:layout_width="80dp"
+                        android:layout_height="40dp"
+                        android:paddingBottom="-5dp"
+                        android:paddingTop="-5dp"
+                        android:gravity="center|center_horizontal|center_vertical"
+                        android:inputType="numberDecimal"
+                        android:imeOptions="flagNoFullscreen"
+                        />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="40dp"
+                    android:gravity="center|center_horizontal|left|center_vertical"
+                    android:text="@string/textView_calcOne_tableContentDescription_percentage" />
+            </TableRow>
+
+            <TableRow
+                android:id="@+id/row8result"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_span="2"
-                android:text="@string/textView_calcOne_tableContentDescription_resultUnit" />
+                android:layout_marginBottom="16dp"
+                android:layout_marginTop="8dp">
 
-        </TableRow>
+                <TextView
+                    android:layout_width="164dp"
+                    android:text="@string/textView_calcOne_tableContentDescription_column1" />
 
-    </TableLayout>
+                <TextView
+                    android:id="@+id/textView_calcOne_result"
+                    android:layout_width="40dp"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:maxLength="7" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_span="2"
+                    android:text="@string/textView_calcOne_tableContentDescription_resultUnit" />
+
+            </TableRow>
+
+        </TableLayout>
 
     <Button
         android:id="@+id/button_calcOne_additionalInfo"
