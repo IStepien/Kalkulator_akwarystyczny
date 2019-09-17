@@ -1,60 +1,68 @@
 package com.example.kalkulator_akwarystyczny;
 
 import android.content.Intent;
+import android.content.res.Configuration;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Spinner;
 import android.widget.TextView;
 
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.constraintlayout.widget.ConstraintLayout;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
+import com.google.android.material.snackbar.Snackbar;
+
+import java.text.DecimalFormat;
+import java.text.NumberFormat;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnTextChanged;
 
-public class CalculatorOneDetailActivity extends AppCompatActivity {
+
+public class CalculatorOneDetailActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
     @BindView(R.id.button_calcOne_additionalInfo)
     Button button_additionalInfo;
-    @BindView(R.id.editText_HCl)
-    EditText HCl_quantity;
-    @BindView(R.id.editText_H2SO4)
-    EditText H2SO4_quantity;
-    @BindView(R.id.editText_HNO3)
-    EditText HNO3_quantity;
-    @BindView(R.id.editText_H3PO4)
-    EditText H3PO4_quantity;
-    @BindView(R.id.editText_citricAcid)
-    EditText citricAcid_quantity;
-    @BindView(R.id.editText_vinegar)
-    EditText vinegar_quantity;
-    @BindView(R.id.editText_HClconcentration)
-    EditText HClconcentration;
-    @BindView(R.id.editText_H2SO4concentration)
-    EditText H2SO4concentration;
-    @BindView(R.id.editText_HNO3concentration)
-    EditText HNO3concentration;
-    @BindView(R.id.editText_H3PO4concentration)
-    EditText H3PO4concentration;
-    @BindView(R.id.editText_vinegarConcentration)
-    EditText vinegarConcentration;
     @BindView((R.id.editText_waterQuantity))
     EditText waterQuantity;
+    @BindView(R.id.editText_acidQuantity)
+    EditText acidQuantity;
+    @BindView((R.id.editText_acidConcentration))
+    EditText acidConcentration;
     @BindView((R.id.textView_calcOne_result))
     TextView calcOneResult;
+    @BindView((R.id.spinner_calcOne_acid))
+    Spinner spinner;
+    @BindView(R.id.textView_calcOne_unit)
+    TextView calcOne_unit;
     String[] editTexts;
+    ElementsForCalc element;
+    View currentLayout;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_calculator1_detail);
         ButterKnife.bind(this);
+
+        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this, R.array.acid_array, R.layout.spinner_item);
+        adapter.setDropDownViewResource(R.layout.spinner_item);
+        spinner.setAdapter(adapter);
+        spinner.setOnItemSelectedListener(this);
+
+        int orientation = getResources().getConfiguration().orientation;
+        if (orientation == Configuration.ORIENTATION_PORTRAIT) {
+            currentLayout = findViewById(R.id.constraintlayout_calcOne);
+        } else {
+            currentLayout = findViewById(R.id.scrollView_calcOne);
+        }
 
 
         button_additionalInfo.setOnClickListener(new View.OnClickListener() {
@@ -64,54 +72,84 @@ public class CalculatorOneDetailActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+        element = ElementsForCalc.HCl;
 
 
-        onInputChange();
     }
 
-    @OnTextChanged({R.id.editText_HCl, R.id.editText_HClconcentration, R.id.editText_H2SO4, R.id.editText_H2SO4concentration,
-            R.id.editText_HNO3, R.id.editText_HNO3concentration, R.id.editText_H3PO4, R.id.editText_H3PO4concentration,
-            R.id.editText_vinegar, R.id.editText_vinegarConcentration, R.id.editText_citricAcid, R.id.editText_waterQuantity})
-    public void onInputChange() {
-        editTexts = new String[]{(HCl_quantity.getText().toString()), (HClconcentration.getText().toString()),
-                (H2SO4_quantity.getText().toString()), (H2SO4concentration.getText().toString()),
-                (HNO3_quantity.getText().toString()), (HNO3concentration.getText().toString()),
-                (H3PO4_quantity.getText().toString()), (H3PO4concentration.getText().toString()),
-                (citricAcid_quantity.getText().toString()), (vinegar_quantity.getText().toString()),
-                (vinegarConcentration.getText().toString()), (waterQuantity.getText().toString())};
+    @Override
+    public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+        String acid = (String) parent.getItemAtPosition(position);
 
+        switch (acid) {
+            case ("kwas solny, HCl"):
+                acidConcentration.setEnabled(true);
+                calcOne_unit.setText(R.string.textView_calcOne_tableContentDescription_unit);
+                break;
+            case ("kwas siarkowy, H2SO4"):
+                element = ElementsForCalc.H2SO4;
+                acidConcentration.setEnabled(true);
+                calcOne_unit.setText(R.string.textView_calcOne_tableContentDescription_unit);
+                break;
+            case ("kwas azotowy, HNO3"):
+                element = ElementsForCalc.HNO3;
+                acidConcentration.setEnabled(true);
+                calcOne_unit.setText(R.string.textView_calcOne_tableContentDescription_unit);
+                break;
+            case ("kwas ortofosforowy, H3PO4"):
+                element = ElementsForCalc.H3PO4;
+                acidConcentration.setEnabled(true);
+                calcOne_unit.setText(R.string.textView_calcOne_tableContentDescription_unit);
+                break;
+            case ("kwas octowy (ocet)"):
+                element = ElementsForCalc.VINEGAR;
+                acidConcentration.setEnabled(true);
+                calcOne_unit.setText(R.string.textView_calcOne_tableContentDescription_unit);
+                break;
+            case ("kwas cytrynowy (krystaliczny)"):
+                element = ElementsForCalc.ACIDUM_CITRICUM;
+                acidConcentration.setEnabled(false);
+                calcOne_unit.setText(R.string.textView_calcOne_tableContentDescription_unitG);
+        }
+        onInputChange();
+
+    }
+
+    @Override
+    public void onNothingSelected(AdapterView<?> parent) {
+
+    }
+
+
+    @OnTextChanged({R.id.editText_waterQuantity, R.id.editText_acidConcentration, R.id.editText_acidQuantity})
+    public void onInputChange() {
+
+        editTexts = new String[]{acidConcentration.getText().toString(), acidQuantity.getText().toString(),
+                waterQuantity.getText().toString()};
         setToZeroIfEmpty(editTexts);
 
-        ElementsForCalc.HCl.setQuantity(Double.valueOf(editTexts[0]));
-        ElementsForCalc.HCl.setConcentration(Double.valueOf(editTexts[1]));
+        Double concentration = Double.valueOf(editTexts[0]);
+        if (concentration > 10.0 && element != ElementsForCalc.ACIDUM_CITRICUM) {
+            Snackbar snackbar = Snackbar.make(currentLayout, R.string.calcOne_concentrationWarning, Snackbar.LENGTH_LONG);
+            snackbar.show();
+        }
 
-        ElementsForCalc.H2SO4.setQuantity(Double.valueOf(editTexts[2]));
-        ElementsForCalc.H2SO4.setConcentration(Double.valueOf(editTexts[3]));
+        if (element == ElementsForCalc.ACIDUM_CITRICUM) {
+            Snackbar snackbar = Snackbar.make(currentLayout, R.string.calcOne_citricAcidWarning, Snackbar.LENGTH_LONG);
+            snackbar.show();
+        }
 
-        ElementsForCalc.HNO3.setQuantity(Double.valueOf(editTexts[4]));
-        ElementsForCalc.HNO3.setConcentration(Double.valueOf(editTexts[5]));
-
-        ElementsForCalc.H3PO4.setQuantity(Double.valueOf(editTexts[6]));
-        ElementsForCalc.H3PO4.setConcentration(Double.valueOf(editTexts[7]));
-
-        ElementsForCalc.ACIDUM_CITRICUM.setQuantity(Double.valueOf(editTexts[8]));
-
-        ElementsForCalc.VINEGAR.setQuantity(Double.valueOf(editTexts[9]));
-        ElementsForCalc.VINEGAR.setConcentration(Double.valueOf(editTexts[10]));
-
-        List<ElementsForCalc> elements = new ArrayList<>(Arrays.asList(ElementsForCalc.HCl, ElementsForCalc.H2SO4,
-                ElementsForCalc.HNO3, ElementsForCalc.H3PO4, ElementsForCalc.ACIDUM_CITRICUM, ElementsForCalc.VINEGAR));
-
+        element.setConcentration(concentration);
+        element.setQuantity(Double.valueOf(editTexts[1]));
 
         CalculatorOne calculatorOne = new CalculatorOne();
-        calculatorOne.calculateAcidQuantity(elements);
-        Double waterQuantity = Double.valueOf(editTexts[11]);
-        Double reductionOfCarbonateHardness = calculatorOne.calculateReductionOfCarbonateHardness(waterQuantity);
-        if(reductionOfCarbonateHardness.isInfinite()|| reductionOfCarbonateHardness.isNaN()){
-            calcOneResult.setText("error");
-        }
-        else {
-            calcOneResult.setText(reductionOfCarbonateHardness.toString());
+        calculatorOne.calculateAcidQuantity(element);
+        Double reductionOfCarbonateHardness = calculatorOne.calculateReductionOfCarbonateHardness(Double.valueOf(editTexts[2]));
+        NumberFormat formatter = new DecimalFormat("#0.00");
+        if (reductionOfCarbonateHardness.isInfinite() || reductionOfCarbonateHardness.isNaN()) {
+            calcOneResult.setText("invalid");
+        } else {
+            calcOneResult.setText(formatter.format(reductionOfCarbonateHardness));
         }
     }
 
@@ -120,11 +158,9 @@ public class CalculatorOneDetailActivity extends AppCompatActivity {
 
             if (editTexts[i].equals("")) {
                 editTexts[i] = "0.0";
-
+                Log.i("setToZero", "value" + editTexts[i]);
             }
-
-
         }
-    }
 
+    }
 }

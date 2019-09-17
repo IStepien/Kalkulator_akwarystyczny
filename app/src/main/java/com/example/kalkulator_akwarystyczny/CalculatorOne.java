@@ -2,8 +2,6 @@ package com.example.kalkulator_akwarystyczny;
 
 
 
-import java.util.List;
-
 import lombok.Data;
 
 @Data
@@ -26,12 +24,10 @@ public class CalculatorOne {
 
     }
 
-    public Double calculateAcidQuantity(List<ElementsForCalc> elementsList) {
+    public Double calculateAcidQuantity(ElementsForCalc element) {
         Double result = 0.0;
         gradeSum=0.0;
-        for (ElementsForCalc element : elementsList
-        ) {
-            if (element.equals(ElementsForCalc.ACIDUM_CITRICUM)) {
+           if (element.equals(ElementsForCalc.ACIDUM_CITRICUM)) {
 
              result=  ElementsForCalc.ACIDUM_CITRICUM.quantity/ ElementsForCalc.ACIDUM_CITRICUM.molarMass*2;
             }
@@ -42,7 +38,7 @@ public class CalculatorOne {
                 result = calculateMass(element)*(element.concentration/100)/element.molarMass*2;
             }
             gradeSum += result;
-        }
+
 
         return result;
     }

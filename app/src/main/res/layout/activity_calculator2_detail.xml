@@ -33,7 +33,7 @@
             <EditText
                 android:id="@+id/editText_calcTwo_acidConcentration"
                 android:layout_width="wrap_content"
-                android:inputType="number"
+                android:inputType="numberDecimal"
                 android:maxLines="1" />
         </TableRow>
 
@@ -47,7 +47,7 @@
             <EditText
                 android:id="@+id/editText_calcTwo_acidQuantity"
                 android:layout_width="wrap_content"
-                android:inputType="number"
+                android:inputType="numberDecimal"
                 android:maxLines="1" />
         </TableRow>
 
@@ -60,7 +60,7 @@
             <EditText
                 android:id="@+id/editText_calcTwo_acidTargetConcentration"
                 android:layout_width="wrap_content"
-                android:inputType="number"
+                android:inputType="numberDecimal"
                 android:maxLines="1" />
 
         </TableRow>

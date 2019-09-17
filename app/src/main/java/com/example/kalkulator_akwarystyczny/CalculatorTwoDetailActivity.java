@@ -10,6 +10,8 @@ import android.widget.TextView;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
+import java.text.DecimalFormat;
+import java.text.NumberFormat;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -92,22 +94,23 @@ public class CalculatorTwoDetailActivity extends AppCompatActivity {
                         if(value.isNaN()||value.isInfinite()){
                 value=0.0;
             }
+
             waterQuantityResultsValidated.add(value);
         }
-
-        waterQuantity_HCL.setText(waterQuantityResultsValidated.get(0).toString());
-        waterQuantity_H2SO4.setText(waterQuantityResultsValidated.get(1).toString());
-        waterQuantity_HNO3.setText(waterQuantityResultsValidated.get(2).toString());
-        waterQuantity_H3PO4.setText(waterQuantityResultsValidated.get(3).toString());
-        waterQuantity_vinegar.setText(waterQuantityResultsValidated.get(4).toString());
+        NumberFormat formatter = new DecimalFormat("#0.00");
+        waterQuantity_HCL.setText(formatter.format(waterQuantityResultsValidated.get(0)));
+        waterQuantity_H2SO4.setText(formatter.format(waterQuantityResultsValidated.get(1)));
+        waterQuantity_HNO3.setText(formatter.format(waterQuantityResultsValidated.get(2)));
+        waterQuantity_H3PO4.setText(formatter.format(waterQuantityResultsValidated.get(3)));
+        waterQuantity_vinegar.setText(formatter.format(waterQuantityResultsValidated.get(4)));
 
         List<Double> totalQuantityResults = calculatorTwo.calculateTotalQuantity(elements);
 
-        totalQuantity_HCL.setText(totalQuantityResults.get(0).toString());
-        totalQuantity_H2SO4.setText(totalQuantityResults.get(1).toString());
-        totalQuantity_HNO3.setText(totalQuantityResults.get(2).toString());
-        totalQuantity_H3PO4.setText(totalQuantityResults.get(3).toString());
-        totalQuantity_vinegar.setText(totalQuantityResults.get(4).toString());
+        totalQuantity_HCL.setText(formatter.format(totalQuantityResults.get(0)));
+        totalQuantity_H2SO4.setText(formatter.format(totalQuantityResults.get(1)));
+        totalQuantity_HNO3.setText(formatter.format(totalQuantityResults.get(2)));
+        totalQuantity_H3PO4.setText(formatter.format(totalQuantityResults.get(3)));
+        totalQuantity_vinegar.setText(formatter.format(totalQuantityResults.get(4)));
     }
 
 

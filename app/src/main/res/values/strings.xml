@@ -5,7 +5,6 @@
     <string name="calcTwo_description">Kalkulator do obliczania rozcieńczania kwasów</string>
     <string name="textView_calcOne_tableContentDescription_column1">Zmniejszenie twardości węglanowej bez zmiany ogólnej</string>
     <string name="textView_calcOne_tableContentDescription_column2">stężenie \n  %</string>
-    <string name="textView_calcOne_tableContentDescription_row1">kwas solny, HCl</string>
     <string name="textView_calcOne_tableContentDescription_unit">ml</string>
     <string name="textView_calcOne_tableContentDescription_row2">kwas solny, HCl</string>
     <string name="textView_calcOne_tableContentDescription_row3">kwas siarkowy, H2SO4</string>
@@ -34,4 +33,17 @@
     <string name="textView_calcTwo_tableDescriptionColumn2">ilość wody\n ml</string>
     <string name="textView_calcTwo_tableDescriptionColumn3">razem\n ml</string>
     <string name="textView_calcTwo_warning">Pamiętaj, że kwas wlewamy do wody (w okularach i rękawiczkach) !!!</string>
+    <string name="textView_calcOne_acidQuantity">Ilość kwasu</string>
+    <string name="textView_calcOne_acidConcentration">Stężenie</string>
+    <string name="textView_calcOne_tableContentDescription_percentage">%</string>
+    <string name="calcOne_concentrationWarning">UWAGA! Kwas o stężeniu powyżej 10% jest bardzo niebezpieczny</string>
+    <string name="calcOne_citricAcidWarning">Uwaga. Jest biodegradowalny więc efekt obniżenia KH jest bardzo krótki</string>
+    <string-array name="acid_array">
+        <item>kwas solny, HCl</item>
+        <item>kwas siarkowy, H2SO4</item>
+        <item>kwas azotowy, HNO3</item>
+        <item>kwas ortofosforowy, H3PO4</item>
+        <item>kwas octowy (ocet)</item>
+        <item>kwas cytrynowy (krystaliczny)</item>
+    </string-array>
 </resources>
