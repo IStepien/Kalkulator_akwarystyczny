@@ -6,12 +6,15 @@
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_margin="8dp"
        >
+
         <TextView
             android:id="@+id/textView_additionalInfo"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/textView_calcOne_additionalInfo"/>
+            android:text="@string/textView_calcOne_additionalInfo"
+            />
     </ScrollView>
 
 </LinearLayout>
